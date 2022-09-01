@@ -189,7 +189,7 @@ plt.plot(test)
 plt.title(STATE + ' train & test data division')  # train & test plot
 plt.show()
 
-# get_ac_pac(st_series)
+get_ac_pac(st_series)
 
 
 ##################################################################################################
@@ -259,7 +259,7 @@ def normal_arima(series, p, d, q):
 
 
 # p_val, d_val, q_val = 1, 0, 0
-# normal_arima(st_series, p_val, d_val, q_val)
+# normal_arima(st_series, p_val, d_val, q_val)  # arima execution
 
 
 ##################################################################################################
@@ -305,7 +305,7 @@ def arima_roll(train_series, test_series):
     return rmse, corr
 
 
-rmseR, corrR = arima_roll(train, test)
+# rmseR, corrR = arima_roll(train, test)    # roll arima execution
 # rmse_roll.append(rmseR)
 # corr_roll.append(corrR)
 
@@ -342,7 +342,7 @@ def autoarima(trains, tests):
     return rmseAu, corrAu
 
 
-# rmseA, corrA = autoarima(train, test)
+rmseA, corrA = autoarima(train, test)    # auto arima execution
 
 # rmse_auto.append(rmseA)
 # corr_auto.append(corrA)
@@ -390,7 +390,7 @@ def sarima(trains, tests):
     return rmseSA, corrSA
 
 
-# rmseS, corrS = sarima(train, test)
+rmseS, corrS = sarima(train, test)    # sarima execution
 
 # rmse_seasonal.append(rmseS)
 # corr_seasonal.append(corrS)
@@ -407,13 +407,6 @@ corr_auto = [-0.007157154117782484, 0.023871240023521575, 0.10885040772293349, -
 rmse_seasonal = [0.023224823502650573, 0.01865970907218524, 0.011153006465580217, 0.01757314661820364, 0.007274292584339075, 0.029696537006595868, 0.00575735065128208, 0.01986527415613189, 0.030222610508656822, 0.016667357699906262, 0.00772344427295225, 0.01128657683290528, 0.0073163357028527545, 0.008572691277226971, 0.010884604242161939, 0.026615042186059538, 0.00846359316956892, 0.009698044154156305, 0.016184104477399743, 0.01023433928761822, 0.024774926209885317, 0.014281325131300962, 0.0085379584744292, 0.008063253785262021, 0.01046359819351321, 0.009914068519153362, 0.011633757627475049, 0.029953772898746546, 0.008091629773198342, 0.014517227014043127, 0.021312325904098657, 0.011579625296913218, 0.008841521208507551, 0.016545206471850406, 0.006683363222685306, 0.01279337408007842, 0.008970879861990572]
 corr_seasonal = [0.6926327872953565, 0.47626199858322843, 0.6340805684584675, 0.7624883853640919, 0.4416041351096932, 0.5257840792205642, 0.8225932872797221, 0.8251406385786832, 0.7038023216363346, 0.7004244820419847, 0.46454393124565485, 0.510528215070156, 0.728937522663975, 0.7051143910000967, 0.6480128824512359, 0.3154750601803115, 0.8224045849313872, 0.5466974262138683, 0.811158474336613, 0.768392024363527, 0.3325073589211812, 0.6744909186231729, 0.7055169877968114, 0.5793299396962734, 0.8781697595467561, 0.7275081129927685, 0.7727464506446176, 0.6834145168867994, 0.8359424197420035, 0.7549425876737982, 0.7385370135392915, 0.7054175595428132, 0.5678434283153028, 0.5959667563148386, 0.7735194496791515, 0.584391135503299, 0.6927493655348536]
 
-# print('ROLL RMSE:', rmse_roll)
-# print('ROLL CORR:', corr_roll)
-# print('AUTO RMSE:', rmse_auto)
-# print('AUTO CORR:', corr_auto)
-# print('SEASONAL RMSE:', rmse_seasonal)
-# print('SEASONAL CORR:', corr_seasonal)
-print()
 print('states_abv len:', len(states_abv))
 print()
 print('ROLL RMSE len:', len(rmse_roll))
@@ -445,18 +438,7 @@ print('SEASONAL RMSE mean:', mean(rmse_seasonal))
 print('SEASONAL CORR mean:', mean(corr_seasonal))
 
 plt.rcParams.update({'figure.figsize': (12, 6), 'figure.dpi': 120})
-'''
-plt.bar(states_abv, rmse_roll)
-plt.title('Rolling Forecast RMSE')
-plt.xlabel('State')
-plt.ylabel('RMSE')
-plt.show()
-plt.bar(states_abv, corr_roll)
-plt.title('Rolling Forecast Correlation')
-plt.xlabel('State')
-plt.ylabel('Corr')
-plt.show()
-'''
+
 plt.bar(states_abv, rmse_auto)
 plt.title('ARIMA RMSE')
 plt.xlabel('State')
