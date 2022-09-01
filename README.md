@@ -1,1 +1,2 @@
-# Forecasting_Influenza-COVID19_TFG
+# Forecasting Influenza-COVID19 (TFG)
+This project presents time series forecasting. This type of data is prevalent in many scientific and engineering disciplines. Time series forecasting is a crucial task in many ambits such as the healthcare one. In this project, the ARIMA & SARIMA models are used to predict values from Influenza and COVID-19 data. This process has consisted of obtaining, analyzing, and preparing the data in detail, in order to correctly apply the models and obtain results. The data obtained has been analyzed and this has allowed the comparison between the different applied models. Finally, this comparison has been extended to the rest of the most used models in the state of the art in this field.
